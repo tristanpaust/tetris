@@ -50,4 +50,18 @@
     margin-top: 100px;
     font-weight: 600;
     font-size: 24pt;
+    color: white;
+}
+
+#countdown .button-wrapper {
+    text-align: center;
+}
+
+#countdown .restart-button {
+    color: white;
+    font-size: 30pt;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: sans-serif;
+    text-decoration: none;
 }

@@ -395,7 +395,12 @@ function Block() {
                     checkAllRows.push(true);
                 }
                 else {
+		          if (matrix[tempX][0] !== 0) {
+                    return gameoverScreen();
+		          }
+		          else {
                     checkAllRows.push(false);
+		          }   
                 }
                 testY = y;
             }
