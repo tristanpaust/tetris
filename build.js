@@ -493,9 +493,25 @@ function Block() {
             state = this.initialState;
         }
         currentState = rotateMatrixCounterClockwise(state);
-        this.setCurrentState(currentState);
-        this.setRotation();
-        return currentState; 
+        let checkAllRows = [];
+        for (let i = 0; i < currentState.length; i++) {
+            for (let j = 0; j < currentState[i].length; j++) {
+                let tempY = y + i;
+                let tempX = x + j;
+                if (matrix[tempX][tempY] !== 0) {
+                    checkAllRows.push(false);
+                }
+                else {
+                    checkAllRows.push(true);
+                }
+            }
+        }
+        if (checkAllRows.every(allTrue)) {
+            this.setCurrentState(currentState);
+            this.setRotation();
+            return currentState; 
+        }
+        return false;
     }
     this.addBlockToBoard = function() {
         var blockMatrix = this.getCurrentState();
